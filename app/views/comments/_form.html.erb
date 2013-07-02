@@ -1,0 +1,26 @@
+<h3>Post a comment</h3>
+
+<%= form_for [@article, @comment] do |f| %>
+
+  <ul>
+    <% @article.errors.full_messages.each do |error| %>
+      <li>
+        <%= error %>
+      </li>
+    <% end %>
+  </ul>
+
+  <p>
+    <%= f.label :author_name, "Your name:" %>
+    <%= f.text_field :author_name %>
+  </p>
+
+  <p>
+    <%= f.label :body, "Your comment:" %>
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
