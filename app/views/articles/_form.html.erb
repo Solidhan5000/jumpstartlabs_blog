@@ -1,0 +1,23 @@
+<%= form_for @article do |f| %>
+  <!-- Error messages -->
+  <ul>
+    <% @article.errors.full_messages.each do |error| %>
+      <li>
+        <%= error %>
+      </li>
+    <% end %>
+  </ul>
+
+  <!-- Form input field -->
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title, class:'span6' %>
+  </p>
+  <p>
+    <%= f.label :body %>
+    <%= f.text_area :body, class:'span9' %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
